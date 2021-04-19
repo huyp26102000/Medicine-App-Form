@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Input</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="/">Form</a>
+    </nav>
+
+    <div class="container">
+        <form action="" method="post">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label class="my-1 mr-2" for="exampleInputEmail1">Họ và tên</label>
+                    <input type="text" class="form-control my-1 mr-sm-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Họ và tên">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="my-1 mr-2" for="exampleInputPassword1">Ngày lập kế hoạch</label>
+                    <input type="phone" class="form-control my-1 mr-sm-2" id="exampleInputPassword1" placeholder="Ngày lập kế hoạch">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="exampleInputPassword1">Bác sĩ theo dõi</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Bác sĩ theo dõi">
+                </div>
+            </div>
+            
+            <!-- 1111 -->
+
+            <div class="row">
+                <div class="col">
+                    <span class="material-icons md-48">sentiment_very_satisfied</span>
+                    <p class="h1">KHI KHOẺ</p>
+                    <span>Bệnh Hen được kiểm soát (hầu như không có triệu chứng), </span>
+                    <span class="alert-link"> luôn mang theo thuốc cắt cơn Hen</span>
+                </div>                
+            </div>
+
+            <!-- ???? -->
+            </br>
+            <p class="h5">THUỐC HEN HẰNG NGÀY (THUỐC NGỪA CƠN) CỦA TÔI LÀ</p>            
+
+            <div class="row d-flex align-items-center justify-content-md-center">
+                <span class="col-md-auto">Thuốc</span>
+                <input type="text" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, mỗi lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số nhát">
+                <span class="col-md-auto">nhát/hít.</span>
+            </div>
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Thuốc</span>
+                <input type="text" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, sáng/tối, uống 1 lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số viên">
+                <span class="col-md-auto">viên</span>
+            </div>
+
+            <p class="h5">THUỐC <span class="font-weight-bold">CẮT CƠN </span>( khi bị ho, khò khè, khó thở, nặng ngực) </p>    
+
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Thuốc</span>
+                <input type="text" class="col-sm-4 form-control" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng 1 lần 2 nhát.</span>
+            </div>
+
+            </br>
+            <p class="h5">Các hướng dẫn thêm (tránh các dị nguyên, những việc cần làm trước khi gắng sức)</p>
+            <input type="text" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Hướng dẫn">
+
+            <!-- 2222 -->
+        </br>
+            <span class="material-icons">sentiment_dissatisfied</span>
+            <p class="h1">KHI KHÔNG KHỎE</p>
+            <p class="font-italic">Bệnh hen xấu đi (cần dung thuốc cắt cơn trên 3 lần/tuần, thức giấc vì hen, xuất hiện nhiều triệu chứng hơn bình thường, bệnh hen gây cản trở hoạt động bình thường)</p>
+            <p>Tiếp tục thuốc hen hằng ngày và thuốc hen cắt cơn khi cần như trên</p>
+
+            <p class="h5">CÁC HƯỚNG DẪN THÊM</p>
+
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Thêm thuốc</span>
+                <input type="text" class="col-sm-4 form-control" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, mỗi lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số nhát">
+                <span class="col-md-auto">nhát trong 2 tuần</span>
+            </div>
+
+            <p>Nên đến gặp bác sĩ để được thăm khám và tư vấn dù bệnh Hen ổn định trở lại.</p>
+            <!-- 3333 -->
+            </br>
+            <span class="material-icons">
+                sentiment_very_dissatisfied
+                </span>
+            <p class="h1">HEN TIẾP TỤC XẤU ĐI</p>
+            <p>Trong 2-3 ngày, bệnh hen của tôi trở nên nặng HOẶC không đỡ HOẶC thường xuyên thức giấc vào ban đêm, cần dung liên tiếp thuốc cắt cơn dưới 3 giờ.</p>
+            <p>Tiếp tục dùng  thuốc Hen như <span class="font-weight-bold">KHI KHÔNG KHỎE.</span></p>
+            <p class="font-weight-bold font-italic">CÁC HƯỚNG DẪN THÊM</p>
+            <p>Bắt đầu một đợt điều trị corticoid đường uống như sau</p>
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Prednisone 5mg dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, lần</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số viên">
+                <span class="col-md-auto">viên, (sau ăn) trong </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số ngày">
+                <span class="col-md-auto">ngày</span>
+            </div>
+            <p class="font-weight-bold">HOẶC</p>
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Methylprednisolon 16 mg dùng </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số viên">
+                <span class="col-md-auto">viên, (sau ăn) trong </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số ngày">
+                <span class="col-md-auto">ngày.</span>
+            </div>
+            <p>Đến gặp bác sĩ để được thăm khám và tư vấn dù bệnh Hen ổn định trở lại.</p>
+            </br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      </br>
+</body>
+</html>
