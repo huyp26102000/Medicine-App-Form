@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kế hoạch</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        font-family: 'Quicksand', sans-serif;
+    }
+</style>
+
+<body>
+    <Form action="" method="post">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="/">Kế hoạch</a>
+            <input type="submit" value="LOG IN">
+        </nav>
+
+        <div class="container">
+            <form action="" method="post">
+                </br>
+                <div class="p-3 mb-2 bg-primary text-white">
+                    <div class="d-flex justify-content-around">
+                        <div class="p-2">
+                            <div class="d-flex justify-content-around">
+                                <div class="p-2">Họ và Tên:</div>
+                                <div class="p-2">{{ fullname }}</div>
+                            </div>
+                            <div class="d-flex justify-content-around">
+                                <div class="p-2">Bác sĩ theo dõi:</div>
+                                <div class="p-2">{{ Doctor }}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-2">
+                            <div class="d-flex justify-content-around">
+                                <div class="p-2">Ngày lập kế hoạch:</div>
+                                <div class="p-2">{{Date}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </br>
+                <div class="p-3 mb-2 bg-success text-white">
+                    <div> KHI KHOẺ: Bệnh Hen được kiểm soát (hầu như không có triệu chứng), luôn mang theo thuốc cắt cơn Hen. </div>
+                    </br>
+                    <div class="p-3 mb-2 bg-light text-white">
+                        <div> <p class="text-dark">THUỐC HEN HẰNG NGÀY (THUỐC NGỪA CƠN) CỦA TÔI LÀ: </p></div>
+                        <div> <p class="text-dark">o	Thuốc……………………………dùng …………lần/ngày, mỗi lần …………..nhát/hít</p></div>
+                        <div> <p class="text-dark">o	Thuốc……………………………dùng …………lần/ngày, sáng/tối, uống 1 lần…………..viên</p></div>
+                        <div> <p class="text-dark">THUỐC CẮT CƠN ( khi bị ho, khò khè, khó thở, nặng ngực) </p></div>
+                        <div> <p class="text-dark">o	Thuốc ……………………………………………….dùng 1 lần 2 nhát. </p></div>
+                        <div> <p class="text-dark">CÁC HƯỚNG DẪN THÊM (tránh các dị nguyên, những việc cần làm trước khi gắng sức)</p></div>
+                        <div> <p class="text-dark"></p></div>
+                        <div> <p class="text-dark"></p></div>
+                    </div>
+                </div>
+                </br>
+                <div class="p-3 mb-2 bg-warning text-white">
+                    <div>KHI KHÔNG KHỎE: Bệnh hen xấu đi (cần dung thuốc cắt cơn trên 3 lần/tuần, thức giấc vì hen, xuất hiện nhiều triệu chứng hơn bình thường, bệnh hen gây cản trở hoạt động bình thường)</div>
+                    </br>
+                    <div class="p-3 mb-2 bg-light text-white">
+                        <div> <p class="text-dark">Tiếp tục thuốc hen hằng ngày và thuốc hen cắt cơn khi cần như trên</p></div>
+                        <div> <p class="text-dark">CÁC HƯỚNG DẪN THÊM:</p></div>
+                        <div> <p class="text-dark">- Thêm thuốc …………………. ….dùng …..lần/ngày, lần ... nhát trong 2 tuần.</p></div>
+                        <div> <p class="text-dark">- Nên đến gặp bác sĩ để được thăm khám và tư vấn dù bệnh Hen ổn định trở lại.</p></div>
+                    </div>
+                </div>
+                </br>
+                <div class="p-3 mb-2 bg-danger text-white">
+                    <div>HEN TIẾP TỤC XẤU ĐI: Trong 2-3 ngày, bệnh hen của tôi trở nên nặng HOẶC không đỡ HOẶC thường xuyên thức giấc vào ban đêm, cần dung liên tiếp thuốc cắt cơn dưới 3 giờ</div>
+                    </br>
+                    <div class="p-3 mb-2 bg-light text-white">
+                        <div> <p class="text-dark">Tiếp tục dùng  thuốc Hen như KHI KHÔNG KHỎE.</p></div>
+                        <div> <p class="text-dark">CÁC HƯỚNG DẪN THÊM:</p></div>
+                        <div> <p class="text-dark">- Bắt đầu một đợt điều trị corticoid đường uống như sau:</p></div>
+                        <div> <p class="text-dark">•	Prednisone 5mg dùng………lần/ngày, lần……..viên, (sau ăn)  trong …..ngày HOẶC</p></div>
+                        <div> <p class="text-dark">•	Methylprednisolon 16 mg dùng ……lần/ngày, lần ……viên, (sau ăn) trong … ngày.</p></div>
+                        <div> <p class="text-dark">- Đến gặp bác sĩ để được thăm khám và tư vấn dù bệnh Hen ổn định trở lại.</p></div>
+                    </div>
+                </div>
+                <div class="p-3 mb-2 bg-light text-dark">
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <div class="w-25 p-3 bg-danger text-white">Nếu có bất kỳ dấu hiệu nguy hiểm nào, tôi nên gọi số 115 để liên hệ xe cứu thương NGAY LẬP TỨC </div>
+                        <img src="static/STAREX-AMBU.png" class="img-fluid" alt="Xe cứu thương" width= 20% heigh= 20%>
+                        <div class="w-25 p-3 bg-danger text-white">
+                            <div class="d-flex flex-column">
+                                <div class="p-2">DẤU HIỆU NGUY HIỂM:</div>
+                                <div class="p-2">•	Các triệu chứng trở nặng nhanh chóng.</div>
+                                <div class="p-2">•	Vô cùng khó thở hay khó nói</div>
+                                <div class="p-2">•	Không đỡ hay đỡ rất ít sau khi sử dụng thuốc cắt cơn.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3 mb-2 bg-danger text-white">
+                    <div class="d-flex justify-content-around flex-wrap">
+                        <div class="p-2">DẤU HIỆU NGUY HIỂM:</div>
+                        <div>
+                            <div class="p-2">•	Các triệu chứng trở nặng nhanh chóng.</div>
+                            <div class="p-2">•	Vô cùng khó thở hay khó nói</div>
+                            <div class="p-2">•	Không đỡ hay đỡ rất ít sau khi sử dụng thuốc cắt cơn.</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </Form>
+</body>
+</html>
