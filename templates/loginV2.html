@@ -11,17 +11,810 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="static/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- //Custom Theme files -->
-<!-- web font -->
-<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-<!-- //web font -->
+<!-- Include CSS and JS -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/css/uikit.min.css" />
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.19/dist/js/uikit-icons.min.js"></script>
 </head>
+<style>
+	.glass {
+		background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 24px;
+	}
+	.in {
+		background: rgba( 255, 255, 255, 0.25 );
+		box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+		backdrop-filter: blur( 4px );
+		-webkit-backdrop-filter: blur( 4px );
+		border-radius: 18px;
+	}
+	h1 {
+        font-family: 'Quicksand', sans-serif !important;
+		font-weight: bold;
+		text-transform: uppercase;
+    }
+	body {
+		font-family: 'Quicksand', sans-serif !important;
+	}
+	p {
+		font-family: 'Quicksand', sans-serif !important;
+	}
+
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.containerx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ece8fc;
+}
+.pill {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #312952 0%, #5A4A94 35%, #7B6BC6 100%);
+  /* border-radius: 100px; */
+  overflow: hidden;
+}
+
+.lanternHills {
+  position: absolute;
+  bottom: -1px;
+  width: 50vh;
+  left: -25px;
+}
+
+.star {
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.star1 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 50vh;
+  top: 57px;
+}
+
+.star2 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 70vh;
+  top: 30px;
+}
+
+.star3 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 50vh;
+  top: 60vh;
+}
+
+.star4 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 84px;
+  top: 18px;
+}
+
+.star5 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 31px;
+  top: 185px;
+}
+
+.star6 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 125px;
+  top: 212px;
+}
+
+.star7 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 124px;
+  top: 45px;
+}
+
+.star8 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 94px;
+  top: 188px;
+}
+
+.star9 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 59px;
+  top: 215px;
+}
+
+.star10 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 62px;
+  top: 61px;
+}
+
+.star11 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 153px;
+  top: 120px;
+}
+
+.star12 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 34px;
+  top: 207px;
+}
+
+.star13 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 89px;
+  top: 111px;
+}
+
+.star14 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 13px;
+  top: 19px;
+}
+
+.star15 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 13px;
+  top: 229px;
+}
+
+.star16 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 20px;
+  top: 80px;
+}
+
+.star17 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 101px;
+  top: 149px;
+}
+
+.star18 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 165px;
+  top: 36px;
+}
+
+.star19 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 154px;
+  top: 186px;
+}
+
+.star20 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 38px;
+  top: 111px;
+}
+
+.star21 {
+  width: 3px;
+  height: 3px;
+  transform: scale(1.1);
+  left: 52px;
+  top: 179px;
+}
+
+.star22 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 122px;
+  top: 54px;
+}
+
+.star23 {
+  width: 2px;
+  height: 2px;
+  transform: scale(1.1);
+  left: 32px;
+  top: 122px;
+}
+
+.star24 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 171px;
+  top: 154px;
+}
+
+.star25 {
+  width: 1px;
+  height: 1px;
+  transform: scale(1.1);
+  left: 143px;
+  top: 211px;
+}
+
+.lanternX1 {
+  position: absolute;
+  bottom: -80px;
+  left: 62px;
+  transform: translateX(0);
+  animation-name: lanternX1;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY1 {
+  display: inline block;
+  width: 71px;
+  z-index: 71000;
+  animation-name: lanternY;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 6s;
+}
+
+@keyframes lanternX1 {
+  50% {
+    transform: translateX(15px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX2 {
+  position: absolute;
+  bottom: -80px;
+  left: 87px;
+  transform: translateX(0);
+  animation-name: lanternX2;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY2 {
+  display: inline block;
+  width: 34px;
+  z-index: 34000;
+  animation-name: lanternY;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 6s;
+}
+
+@keyframes lanternX2 {
+  50% {
+    transform: translateX(32px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX3 {
+  position: absolute;
+  bottom: -80px;
+  left: 83px;
+  transform: translateX(0);
+  animation-name: lanternX3;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY3 {
+  display: inline block;
+  width: 49px;
+  z-index: 49000;
+  animation-name: lanternY;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 2s;
+}
+
+@keyframes lanternX3 {
+  50% {
+    transform: translateX(58px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX4 {
+  position: absolute;
+  bottom: -80px;
+  left: 72px;
+  transform: translateX(0);
+  animation-name: lanternX4;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY4 {
+  display: inline block;
+  width: 60px;
+  z-index: 60000;
+  animation-name: lanternY;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 5s;
+}
+
+@keyframes lanternX4 {
+  50% {
+    transform: translateX(59px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX5 {
+  position: absolute;
+  bottom: -80px;
+  left: 91px;
+  transform: translateX(0);
+  animation-name: lanternX5;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY5 {
+  display: inline block;
+  width: 61px;
+  z-index: 61000;
+  animation-name: lanternY;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 6s;
+}
+
+@keyframes lanternX5 {
+  50% {
+    transform: translateX(72px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX6 {
+  position: absolute;
+  bottom: -80px;
+  left: 65px;
+  transform: translateX(0);
+  animation-name: lanternX6;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY6 {
+  display: inline block;
+  width: 60px;
+  z-index: 60000;
+  animation-name: lanternY;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 6s;
+}
+
+@keyframes lanternX6 {
+  50% {
+    transform: translateX(57px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX7 {
+  position: absolute;
+  bottom: -80px;
+  left: 44px;
+  transform: translateX(0);
+  animation-name: lanternX7;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY7 {
+  display: inline block;
+  width: 76px;
+  z-index: 76000;
+  animation-name: lanternY;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 5s;
+}
+
+@keyframes lanternX7 {
+  50% {
+    transform: translateX(24px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX8 {
+  position: absolute;
+  bottom: -80px;
+  left: 3px;
+  transform: translateX(0);
+  animation-name: lanternX8;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY8 {
+  display: inline block;
+  width: 71px;
+  z-index: 71000;
+  animation-name: lanternY;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 2s;
+}
+
+@keyframes lanternX8 {
+  50% {
+    transform: translateX(40px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX9 {
+  position: absolute;
+  bottom: -80px;
+  left: 64px;
+  transform: translateX(0);
+  animation-name: lanternX9;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY9 {
+  display: inline block;
+  width: 57px;
+  z-index: 57000;
+  animation-name: lanternY;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 3s;
+}
+
+@keyframes lanternX9 {
+  50% {
+    transform: translateX(42px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+.lanternX10 {
+  position: absolute;
+  bottom: -80px;
+  left: 16px;
+  transform: translateX(0);
+  animation-name: lanternX10;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.lanternY10 {
+  display: inline block;
+  width: 45px;
+  z-index: 45000;
+  animation-name: lanternY;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform: translateY(0);
+  animation-delay: 5s;
+}
+
+@keyframes lanternX10 {
+  50% {
+    transform: translateX(75px);
+  }
+}
+@keyframes lanternY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+/* --------Social Icons-------- */
+/* Color Variables */
+/* Social Icon Mixin */
+.social-icons {
+  display: flex;
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+.social-icon:hover {
+  color: #fff;
+}
+.social-icon:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -150%);
+}
+.social-icon:active {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5) inset;
+}
+.social-icon--twitter {
+  background: #2b97f1;
+  color: #fff;
+}
+.social-icon--twitter .tooltip {
+  background: #2b97f1;
+  color: currentColor;
+}
+.social-icon--twitter .tooltip:after {
+  border-top-color: #2b97f1;
+}
+.social-icon--codepen {
+  background: #000;
+  color: #fff;
+}
+.social-icon--codepen .tooltip {
+  background: #000;
+  color: currentColor;
+}
+.social-icon--codepen .tooltip:after {
+  border-top-color: #000;
+}
+.social-icon i {
+  position: relative;
+  top: 1px;
+}
+
+/* Tooltips */
+.tooltip {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.4rem 0.6rem;
+  border-radius: 40px;
+  font-size: 0.4rem;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: uppercase;
+  transform: translate(-50%, -100%);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.tooltip:after {
+  display: block;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+</style>
 <body>
+
+	<!-- <div class="card uk-card uk-card-default uk-padding-small uk-card-body uk-height-1-1 uk-background-center-center uk-background-cover" style="background-image: url('https://image.freepik.com/free-vector/abstract-blurred-gradient-mesh-background_1159-3175.jpg');" uk-height-viewport> -->
+		<div class="uk-position-center" style="z-index: 1000;">
+			<div class="glass uk-padding-small uk-width-xlarge">
+				<div>
+					<div class="uk-text-center"><h1>Đăng nhập</h1></div>
+
+					<form action="" method="post" class=" uk-padding-small">
+						<div class="uk-padding-small">
+							<input class="uk-input in" type="text" name="username" placeholder="Username" required="" value="{{
+								request.form.username }}">
+						</div>
+						<div class="uk-padding-small">
+							<input class="uk-input in" type="password" name="password" placeholder="Password" required="" value="{{
+								request.form.password }}">
+						</div>
+						<input type="submit" class="uk-button in uk-align-center" value="Đăng nhập">
+						
+					</form>
+					<p class="uk-text-center uk-text-bold">Chưa có tài khoản? <a href="#" style="color:#312952"> Đăng kí ngay!</a></p>
+
+				</div>
+				
+			</div>			
+		</div>
+
+		<div class="containerx">
+			<div class="container__elements">
+			  <div class="pill"><span class="star star1"></span><span class="star star2"></span><span class="star star3"></span><span class="star star4"></span><span class="star star5"></span><span class="star star6"></span><span class="star star7"></span><span class="star star8"></span><span class="star star9"></span><span class="star star10"></span><span class="star star11"></span><span class="star star12"></span><span class="star star13"></span><span class="star star14"></span><span class="star star15"></span><span class="star star16"></span><span class="star star17"></span><span class="star star18"></span><span class="star star19"></span><span class="star star20"></span><span class="star star21"></span><span class="star star22"></span><span class="star star23"></span><span class="star star24"></span><img class="lanternHills" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/lanternHills.png"/>
+				<div class="lanternContainer">
+				  <div class="lanternX1"><img class="lanternY1" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png"/></div>
+				  <div class="lanternX2"><img class="lanternY2" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png"/></div>
+				  <div class="lanternX3"><img class="lanternY3" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png"/></div>
+				  <div class="lanternX4"><img class="lanternY4" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png"/></div>
+				  <div class="lanternX5"><img class="lanternY5" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png"/></div>
+				  <div class="lanternX6"><img class="lanternY6" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3522775/LanternsLarge.png"/></div>
+				</div>
+			  </div>
+			</div>
+		  </div>
 	<!-- main -->
-	<div class="main-w3layouts wrapper">
-		<h1>ĐĂNG NHẬP</h1>
+
+		<!-- <h1 class="uk-text-center">ĐĂNG NHẬP</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
 				<form action="" method="post">
@@ -35,24 +828,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</form>
 				<p>Chưa có tài khoản? <a href="#"> Đăng kí ngay!</a></p>
 			</div>
-		</div>
-		{% if error %}
+		</div> -->
+		<!-- {% if error %}
     		<p class="error"><strong>Error:</strong> {{ error }}
-        	{% endif %}
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
+        	{% endif %} -->
 
-	</div>
 	<!-- //main -->
 </body>
 </html>
