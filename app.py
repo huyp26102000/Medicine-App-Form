@@ -15,6 +15,8 @@ def showForm():
     session['NewestMed'] = get_Newest_Med_Infor(session.get('identity')['ID'])
     session['tmpDate'] = 'Ngày ' + session.get('NewestMed')['date'].strftime("%d") + ' Tháng ' + session.get('NewestMed')['date'].strftime("%m") + ' Năm 20' + session.get('NewestMed')['date'].strftime("%y")
     session['MedWhenGood'] = getMed_WhenGood(session.get('NewestMed')['MedID'])
+    session['MedWhenNotGood'] = getMed_WhenNotgood(session.get('NewestMed')['MedID'])
+    session['MedWhenBad'] = getMed_WhenBad(session.get('NewestMed')['MedID'])
     if request.method == 'POST':
         return redirect(url_for('login')) 
     else:
@@ -28,8 +30,16 @@ def showForm():
                                 daily_Med_2 = session.get('MedWhenGood')['daily_Med_2'],
                                 daily_Med_Num_2 = session.get('MedWhenGood')['daily_Med_Num_2'],
                                 daily_Med_use_2 = session.get('MedWhenGood')['daily_Med_use_2'],
-                                reliever_Med = session.get('MedWhenGood')['reliever_Med']
-                                )
+                                reliever_Med = session.get('MedWhenGood')['reliever_Med'],
+                                addMed = session.get('MedWhenNotGood')['addMed'],
+                                addMed_Num = session.get('MedWhenNotGood')['addMed_Num'],
+                                addMed_use = session.get('MedWhenNotGood')['addMed_use'],
+                                Prednisone_time = session.get('MedWhenBad')['Prednisone_time'],
+                                Prednisone_num = session.get('MedWhenBad')['Prednisone_num'],
+                                Prednisone_days = session.get('MedWhenBad')['Prednisone_days'],
+                                Methylprednisolon_time = session.get('MedWhenBad')['Methylprednisolon_time'],
+                                Methylprednisolon_num = session.get('MedWhenBad')['Methylprednisolon_num'],
+                                Methylprednisolon_days = session.get('MedWhenBad')['Methylprednisolon_days'])
 
  
 @app.route('/home', methods=['GET', 'POST'])

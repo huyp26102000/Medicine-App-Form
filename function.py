@@ -82,14 +82,14 @@ def submidWhenNotgood(  MedID,
         u'addMed_use': addMed_use
         }
     db.collection(u'Medicine_WhenNotGood').document().set(data)
-# def getMed_WhenNotgood(MedID):
-#     docs = db.collection(u'Medicine_WhenGood').stream()
-#     allDoc = list(docs)
-#     for i in range(0, len(allDoc)):
-#         allDoc[i] = allDoc[i].to_dict()
-#     for tmp in allDoc:
-#         if(tmp['MedID']==MedID): return(tmp)
-#     return None
+def getMed_WhenNotgood(MedID):
+    docs = db.collection(u'Medicine_WhenNotGood').stream()
+    allDoc = list(docs)
+    for i in range(0, len(allDoc)):
+        allDoc[i] = allDoc[i].to_dict()
+    for tmp in allDoc:
+        if(tmp['MedID']==MedID): return(tmp)
+    return None
 def submidWhenBad(  MedID,
                     Prednisone_time,
                     Prednisone_num,
@@ -107,8 +107,15 @@ def submidWhenBad(  MedID,
         u'Methylprednisolon_num': Methylprednisolon_num,
         u'Methylprednisolon_days': Methylprednisolon_days,
         }
-    db.collection(u'GeneralInfor').document().set(data)
-
+    db.collection(u'Medicine_WhenBad').document().set(data)
+def getMed_WhenBad(MedID):
+    docs = db.collection(u'Medicine_WhenBad').stream()
+    allDoc = list(docs)
+    for i in range(0, len(allDoc)):
+        allDoc[i] = allDoc[i].to_dict()
+    for tmp in allDoc:
+        if(tmp['MedID']==MedID): return(tmp)
+    return None
 
 # print(getMed_WhenGood(get_Newest_Med_Infor('asdasdasdasd')['MedID']))
 # submidWhenGood(submit_NewMed_Infor('asdasdasdasd', 'Hoang', 'demo2', '8/9/20'),
@@ -117,3 +124,6 @@ def submidWhenBad(  MedID,
 #                 'yyyy','5','3')
 # submidWhenNotgood('')
 # getMed_WhenGood('abc')
+# getMed_WhenNotgood('7f07f700-b40c-420d-b843-87843f3534fe')
+# submidWhenBad('7f07f700-b40c-420d-b843-87843f3534fe',
+#                 3, 3, 4, 4, 5, 5)
