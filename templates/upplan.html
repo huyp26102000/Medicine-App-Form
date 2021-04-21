@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Quản lí</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+body {
+	background: #eeeeee;
+	font-family: 'Varela Round', sans-serif;
+}
+.navbar {
+	color: #fff;
+	background: #000000 !important;
+	padding: 5px 16px;
+	border-radius: 0;
+	border: none;
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+.navbar img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	color: #efe5ff;
+	padding-left: 0;
+	padding-right: 50px;
+	font-size: 24px;		
+}
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+	color: #fff;
+}
+.navbar .navbar-brand i {
+	font-size: 25px;
+	margin-right: 5px;
+}
+.search-box {
+	position: relative;
+}	
+.search-box input {
+	padding-right: 35px;
+	min-height: 38px;
+	border: none;
+	background: #faf7fd;
+	border-radius: 3px !important;
+}
+.search-box input:focus {		
+	background: #fff;
+	box-shadow: none;
+}
+.search-box .input-group-addon {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 10px 7px;
+	height: 100%;
+}
+.search-box i {
+	color: #a0a5b1;
+	font-size: 19px;
+}
+.navbar .nav-item i {
+	font-size: 18px;
+}
+.navbar .nav-item span {
+	position: relative;
+	top: 3px;
+}
+.navbar .navbar-nav > a {
+	color: #efe5ff;
+	padding: 8px 15px;
+	font-size: 14px;		
+}
+.navbar .navbar-nav > a:hover, .navbar .navbar-nav > a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+.navbar .navbar-nav > a > i {
+	display: block;
+	text-align: center;
+}
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+.navbar .dropdown-item .material-icons {
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+.navbar .nav-item.open > a, .navbar .nav-item.open > a:hover, .navbar .nav-item.open > a:focus {
+	color: #fff;
+	background: none !important;
+}
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .dropdown-menu a {
+	color: #777 !important;
+	padding: 8px 20px;
+	line-height: normal;
+	font-size: 15px;
+}
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:focus {
+	color: #333 !important;
+	background: transparent !important;
+}
+.navbar .navbar-nav .active a, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav .active a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.2);
+	background: transparent !important;
+}
+.navbar .navbar-nav .user-action {
+	padding: 9px 15px;
+	font-size: 15px;
+}
+.navbar .navbar-toggle {
+	border-color: #fff;
+}
+.navbar .navbar-toggle .icon-bar {
+	background: #fff;
+}
+.navbar .navbar-toggle:focus, .navbar .navbar-toggle:hover {
+	background: transparent;
+}
+.navbar .navbar-nav .open .dropdown-menu {
+	background: #faf7fd;
+	border-radius: 1px;
+	border-color: #faf7fd;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .divider {
+	background-color: #e9ecef !important;
+}
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 350px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 1199px){
+	.navbar .navbar-nav > a > i {
+		display: inline-block;			
+		text-align: left;
+		min-width: 30px;
+		position: relative;
+		top: 4px;
+	}
+	.navbar .navbar-collapse {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+	}
+	.navbar .navbar-form {
+		border: none;			
+		display: block;
+		margin: 10px 0;
+		padding: 0;
+	}
+	.navbar .navbar-nav {
+		margin: 8px 0;
+	}
+	.navbar .navbar-toggle {
+		margin-right: 0;
+	}
+	.input-group {
+		width: 100%;
+	}
+}
+</style>
+</head> 
+<body>
+    <Form action="" method="post">
+        <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+            <a href="#" class="navbar-brand"><i class="fa fa-stethoscope"></i><b>Dashboard</b></a>  		
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collection of nav links, forms, and other content for toggling -->
+            <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
+                <form class="navbar-form form-inline">
+                </form>
+                <div class="navbar-nav ml-auto">
+                    <a href="{{ url_for('home') }}" class="nav-item nav-link"><i class="fa fa-home"></i><span>Home</span></a>
+                    <a href="{{ url_for('manager') }}" class="nav-item nav-link"><i class="fa fa-users"></i><span>Quản Lí Bệnh Nhân</span></a>
+                    <a href="{{ url_for('history') }}" class="nav-item nav-link"><i class="fa fa-history"></i><span>Lịch Sử Kế Hoạch</span></a>
+                    <a href="#" class="nav-item nav-link active"><i class="fa fa-plus-circle"></i><span>Tạo Kế Hoạch</span></a>
+                    <div class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-item nav-link dropdown-toggle user-action"><img src={{avatarURL}} class="avatar" alt="Avatar"> {{fullname}} <b class="caret"></b></a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a>
+                            <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a>
+                            <div class="divider dropdown-divider"></div>
+                            <button class="dropdown-item" name='logout'><i class="material-icons">&#xE8AC;</i> Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+		<div class="container">
+        <form action="" method="post">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label class="my-1 mr-2" for="exampleInputEmail1">Họ và tên</label>
+                    <input type="text" class="form-control my-1 mr-sm-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Họ và tên">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label class="my-1 mr-2" for="exampleInputPassword1">Ngày lập kế hoạch</label>
+                    <input type="phone" class="form-control my-1 mr-sm-2" id="exampleInputPassword1" placeholder="Ngày lập kế hoạch">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="exampleInputPassword1">Bác sĩ theo dõi</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Bác sĩ theo dõi">
+                </div>
+            </div>
+            
+            <!-- 1111 -->
+
+            <div class="row">
+                <div class="col">
+                    <span class="material-icons md-48">sentiment_very_satisfied</span>
+                    <p class="h1">KHI KHOẺ</p>
+                    <span>Bệnh Hen được kiểm soát (hầu như không có triệu chứng), </span>
+                    <span class="alert-link"> luôn mang theo thuốc cắt cơn Hen</span>
+                </div>                
+            </div>
+
+            <!-- ???? -->
+            </br>
+            <p class="h5">THUỐC HEN HẰNG NGÀY (THUỐC NGỪA CƠN) CỦA TÔI LÀ</p>            
+
+            <div class="row d-flex align-items-center justify-content-md-center">
+                <span class="col-md-auto">Thuốc</span>
+                <input type="text" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, mỗi lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số nhát">
+                <span class="col-md-auto">nhát/hít.</span>
+            </div>
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Thuốc</span>
+                <input type="text" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, sáng/tối, uống 1 lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số viên">
+                <span class="col-md-auto">viên</span>
+            </div>
+
+            <p class="h5">THUỐC <span class="font-weight-bold">CẮT CƠN </span>( khi bị ho, khò khè, khó thở, nặng ngực) </p>    
+
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Thuốc</span>
+                <input type="text" class="col-sm-4 form-control" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng 1 lần 2 nhát.</span>
+            </div>
+
+            </br>
+            <p class="h5">Các hướng dẫn thêm (tránh các dị nguyên, những việc cần làm trước khi gắng sức)</p>
+            <input type="text" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Hướng dẫn">
+
+            <!-- 2222 -->
+        </br>
+            <span class="material-icons">sentiment_dissatisfied</span>
+            <p class="h1">KHI KHÔNG KHỎE</p>
+            <p class="font-italic">Bệnh hen xấu đi (cần dung thuốc cắt cơn trên 3 lần/tuần, thức giấc vì hen, xuất hiện nhiều triệu chứng hơn bình thường, bệnh hen gây cản trở hoạt động bình thường)</p>
+            <p>Tiếp tục thuốc hen hằng ngày và thuốc hen cắt cơn khi cần như trên</p>
+
+            <p class="h5">CÁC HƯỚNG DẪN THÊM</p>
+
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Thêm thuốc</span>
+                <input type="text" class="col-sm-4 form-control" id="thuoc1" placeholder="Tên thuốc">
+                <span class="col-md-auto">dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, mỗi lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số nhát">
+                <span class="col-md-auto">nhát trong 2 tuần</span>
+            </div>
+
+            <p>Nên đến gặp bác sĩ để được thăm khám và tư vấn dù bệnh Hen ổn định trở lại.</p>
+            <!-- 3333 -->
+            </br>
+            <span class="material-icons">
+                sentiment_very_dissatisfied
+                </span>
+            <p class="h1">HEN TIẾP TỤC XẤU ĐI</p>
+            <p>Trong 2-3 ngày, bệnh hen của tôi trở nên nặng HOẶC không đỡ HOẶC thường xuyên thức giấc vào ban đêm, cần dung liên tiếp thuốc cắt cơn dưới 3 giờ.</p>
+            <p>Tiếp tục dùng  thuốc Hen như <span class="font-weight-bold">KHI KHÔNG KHỎE.</span></p>
+            <p class="font-weight-bold font-italic">CÁC HƯỚNG DẪN THÊM</p>
+            <p>Bắt đầu một đợt điều trị corticoid đường uống như sau</p>
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Prednisone 5mg dùng</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, lần</span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số viên">
+                <span class="col-md-auto">viên, (sau ăn) trong </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số ngày">
+                <span class="col-md-auto">ngày</span>
+            </div>
+            <p class="font-weight-bold">HOẶC</p>
+            <div class="row d-flex align-items-center">
+                <span class="col-md-auto">Methylprednisolon 16 mg dùng </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="thuoc1" placeholder="Số lần">
+                <span class="col-md-auto">lần/ngày, lần </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số viên">
+                <span class="col-md-auto">viên, (sau ăn) trong </span>
+                <input type="number" class="col form-control mb-2 mr-sm-2" id="num1" placeholder="Số ngày">
+                <span class="col-md-auto">ngày.</span>
+            </div>
+            <p>Đến gặp bác sĩ để được thăm khám và tư vấn dù bệnh Hen ổn định trở lại.</p>
+            </br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+	  </br>
+    </Form>
+</body>
+</html>

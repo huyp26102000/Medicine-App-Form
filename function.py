@@ -12,13 +12,24 @@ db = firestore.client()
 def getNewID():
     id = uuid.uuid4()
     return str(id)
+def getAllPatient():
+    docs = db.collection(u'Account').where(u'role', u'==', 1).stream()
+    allDoc = list(docs)
+    for i in range(0, len(allDoc)):
+        allDoc[i] = allDoc[i].to_dict()
+        allDoc[i]['role'] = 'Patient'
+        if allDoc[i]['status'] == 0:
+            allDoc[i]['status'] = 'Active'
+    return allDoc
 def validLogin(ID, Password):
     docs = db.collection(u'Account').stream()
     allDoc = list(docs)
     for doc in allDoc:
+        # print(doc.to_dict())
         if ID == doc.to_dict()['username'] and Password == doc.to_dict()['Password']:
-                return doc.to_dict()
+            return doc.to_dict()
     return None
+# validLogin('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918')
 def get_Newest_Med_Infor(PatientID):
     docs = db.collection(u'Med_Infor').stream()
     allDoc = list(docs)
@@ -116,7 +127,23 @@ def getMed_WhenBad(MedID):
     for tmp in allDoc:
         if(tmp['MedID']==MedID): return(tmp)
     return None
-
+def register(Password, avatarURL, fullname, role, username):
+    ID = getNewID()
+    data = {
+        u'ID': ID,
+        u'username': username,
+        u'fullname': fullname,
+        u'Password': Password,
+        u'avatarURL': avatarURL,
+        u'role': role
+        }
+    db.collection(u'Account').document().set(data)
+# register(   '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+#             'http://194.62.98.23:8000/open/shared/Bcare.Assets/img/unknowUser.jpg',
+#             'Guess 2',
+#             1,
+#             'guess2'
+#             )
 # print(getMed_WhenGood(get_Newest_Med_Infor('asdasdasdasd')['MedID']))
 # submidWhenGood(submit_NewMed_Infor('asdasdasdasd', 'Hoang', 'demo2', '8/9/20'),
 #                 '3','5','3','2','2','2','dbcsssdd')
@@ -127,3 +154,4 @@ def getMed_WhenBad(MedID):
 # getMed_WhenNotgood('7f07f700-b40c-420d-b843-87843f3534fe')
 # submidWhenBad('7f07f700-b40c-420d-b843-87843f3534fe',
 #                 3, 3, 4, 4, 5, 5)
+print(len(getAllPatient()))

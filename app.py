@@ -45,11 +45,53 @@ def showForm():
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
-        session['logged_in'] = False
+        if 'logout' in request.form:
+            session['logged_in'] = False
     if not session.get('logged_in'):
         return redirect(url_for('login'))
     else:
-        return render_template('inputForm.html')
+        return render_template('home.html',
+                                fullname = session.get('identity')['fullname'],
+                                avatarURL = session.get('identity')['avatarURL'])
+@app.route('/manager', methods=['GET', 'POST'])
+def manager():
+    session['patientList'] = []
+    if session.get('logged_in'):
+        session['patientList'] = getAllPatient()
+    if request.method == 'POST':
+        if 'logout' in request.form:
+            session['logged_in'] = False
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+    else:
+        return render_template('manager.html',
+                                fullname = session.get('identity')['fullname'],
+                                avatarURL = session.get('identity')['avatarURL'],
+                                listAccount=session.get('patientList')
+                                )
+@app.route('/history', methods=['GET', 'POST'])
+def history():
+    if request.method == 'POST':
+        if 'logout' in request.form:
+            session['logged_in'] = False
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+    else:
+        return render_template('history.html',
+                                fullname = session.get('identity')['fullname'],
+                                avatarURL = session.get('identity')['avatarURL'])
+@app.route('/upplan', methods=['GET', 'POST'])
+def upplan():
+    if request.method == 'POST':
+        if 'logout' in request.form:
+            session['logged_in'] = False
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+    else:
+        return render_template('upplan.html',
+                                fullname = session.get('identity')['fullname'],
+                                avatarURL = session.get('identity')['avatarURL'])                                
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     acc = Account(None, None, None)
@@ -72,9 +114,9 @@ def login():
     if not session.get('logged_in'):
         return render_template('loginV2.html', error=error)
     else:
-        if session.get('identity')['role'] == '0':
+        if session.get('identity')['role'] == 0:
             return redirect(url_for('home'))
-        if session.get('identity')['role'] == '1':
+        if session.get('identity')['role'] == 1:
             return redirect(url_for('showForm'))
     
  
