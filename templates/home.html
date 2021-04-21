@@ -147,6 +147,22 @@ body {
 .navbar .divider {
 	background-color: #e9ecef !important;
 }
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.ml-1 {
+  margin-left: ($spacer * .25) !important;
+}
+
+.px-2 {
+  padding-left: ($spacer * .5) !important;
+  padding-right: ($spacer * .5) !important;
+}
+
+.p-3 {
+  padding: $spacer !important;
+}
 @media (min-width: 1200px){
 	.form-inline .input-group {
 		width: 350px;
@@ -212,7 +228,26 @@ body {
                 </div>
             </div>
         </nav>
-		<div>home</div>
+		<div class="d-flex justify-content-start mt-5">
+			<div class="p-3 ml-5 mb-2 bg-warning text-white">
+				<div class="mb-0">
+					<div><span class="text-muted">Tổng số bệnh nhân</span></div>
+					<div><span class=""> <i class="mdi mdi-arrow-bottom-right"></i> 10 </span></div>
+				</div>
+			</div>
+			<div class="p-3 ml-5 mb-2 bg-danger text-white">
+				<div class="mb-0">
+					<div><span class="">Tổng số kế hoạch</span></div>
+					<div><span class=""> <i class="mdi mdi-arrow-bottom-right"></i> 25 </span></div>
+				</div>
+			</div>
+			<div class="p-3 ml-5 mb-2 bg-light text-white">
+				<div class="mb-0">
+					<div><span class="text-muted">Số kế hoạch tuần vừa rồi</span></div>
+					<div><span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> 5 </span></div>
+				</div>
+			</div>
+		</div>
     </Form>
 </body>
 </html>

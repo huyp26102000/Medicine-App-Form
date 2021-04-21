@@ -21,6 +21,19 @@ def getAllPatient():
         if allDoc[i]['status'] == 0:
             allDoc[i]['status'] = 'Active'
     return allDoc
+def searchPatient(key):
+    docs = db.collection(u'Account').stream()
+    allDoc = list(docs)
+    found = []
+    for i in range(0, len(allDoc)):
+        allDoc[i] = allDoc[i].to_dict()
+        if ((key in allDoc[i]['phone'])
+            or (key in allDoc[i]['email'])
+            or (key in allDoc[i]['fullname'])
+            or (key in allDoc[i]['username'])):
+                found.append(allDoc[i])
+    return found)
+
 def validLogin(ID, Password):
     docs = db.collection(u'Account').stream()
     allDoc = list(docs)
@@ -154,4 +167,8 @@ def register(Password, avatarURL, fullname, role, username):
 # getMed_WhenNotgood('7f07f700-b40c-420d-b843-87843f3534fe')
 # submidWhenBad('7f07f700-b40c-420d-b843-87843f3534fe',
 #                 3, 3, 4, 4, 5, 5)
-print(len(getAllPatient()))
+# print(len(getAllPatient()))
+# import random
+# #Generate 5 random numbers between 10 and 30
+# randomlist = random.sample(range(0, 10), 10)
+# print(randomlist)
